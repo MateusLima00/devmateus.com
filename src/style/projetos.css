@@ -1,0 +1,161 @@
+/* ═══════════════════════════════════════════
+   projetos.css — Estilos da seção de projetos
+   ═══════════════════════════════════════════ */
+
+/* ── Container principal da seção ── */
+.container__projetos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 48px;
+}
+
+/* Título da seção — mesmo estilo visual dos Certificados */
+.container__projetos__titulo {
+  font-family: var(--mario);
+  font-size: clamp(12px, 2vw, 20px);
+  color: var(--text);
+  margin-bottom: 48px;
+  text-align: left;
+}
+
+/* ── Grid de cards — 2 colunas em desktop ── */
+.projetos__grid {
+  display: grid;
+ grid-template-columns: repeat(2, 1fr);
+  gap: 5em;
+}
+
+/* ── Card individual ── */
+.projeto__card {
+  /* Reset de button para usar como card clicável */
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  cursor: default;
+  text-align: left;
+  width: 100%;
+  color: var(--text);
+  font-family: var(--body);
+}
+
+.projeto__card:hover {
+  border-color: rgba(77, 159, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Cabeçalho do card: ícone + título ── */
+.projeto__card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.projeto__icone {
+  font-size: 24px;
+}
+
+.projeto__titulo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── Descrição ── */
+.projeto__descricao {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+  flex: 1; /* ocupa o espaço disponível, empurrando links para baixo */
+}
+
+/* ── Tags de tecnologias ── */
+.projeto__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.projeto__tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: rgba(77, 159, 255, 0.1);
+  border: 1px solid rgba(77, 159, 255, 0.25);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Links Demo / Código ── */
+.projeto__links {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.projeto__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+/* Botão Demo — destaque primário */
+.projeto__link--demo {
+  background: var(--accent);
+  color: #080d1a;
+}
+
+.projeto__link--demo:hover {
+  background: #6ab4ff;
+  transform: translateY(-1px);
+}
+
+/* Botão Código — estilo secundário/outline */
+.projeto__link--repo {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.projeto__link--repo:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .container__projetos {
+    padding: 60px 16px;
+  }
+
+  .projetos__grid {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .projeto__card {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .container__projetos__titulo {
+    text-align: center;
+  }
+}

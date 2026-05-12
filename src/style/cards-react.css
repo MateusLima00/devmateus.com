@@ -1,0 +1,222 @@
+/* =============================================
+   ADICIONAR NO FINAL DO princi.css
+   ============================================= */
+:root {
+  --text: #e8f0ff;
+  --muted: rgba(232, 240, 255, 0.5);
+  --accent: #006be5;
+  --border: rgba(255, 255, 255, 0.1);
+  --glass: rgba(255, 255, 255, 0.05);
+}
+
+
+/* Grid de cards (resultado da busca) */
+.react-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Contador de resultados */
+.react-contador {
+   font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* Sem resultado */
+.react-sem-resultado {
+  text-align: center;
+  color: var(--muted);
+  padding: 60px;
+  font-size: 15px;
+}
+
+/* Card individual */
+.react-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(.23, 1, .32, 1);
+}
+
+.react-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 229, 192, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Imagem do card */
+.react-card-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.react-card:hover .react-card-img {
+  transform: scale(1.03);
+}
+
+/* Corpo do card */
+.react-card-body {
+   padding: 16px;
+}
+
+.react-card-titulo {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* Tags */
+.react-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.react-tag {
+  background: rgba(0, 229, 192, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(0, 229, 192, 0.2);
+  border-radius: 100px;
+  padding: 3px 10px;
+  font-size: 11px;
+}
+
+/* Meta (data + horas) */
+.react-card-meta,
+.react-modal-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+/* =============================================
+   MODAL
+   ============================================= */
+
+.react-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  backdrop-filter: none;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.react-modal {
+  background: #152e61;;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  max-width: 620px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.react-modal-fechar {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.react-modal-fechar:hover {
+  background: rgba(243, 5, 5, 0.945);
+}
+
+.react-modal-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.react-modal-body {
+  padding: 24px;
+}
+
+.react-modal-titulo {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.react-modal-meta {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.react-modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+
+@media (max-width: 768px) {
+  .react-modal-overlay {
+    padding: 16px;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .react-modal {
+    border-radius: 16px;
+    margin-top: 60px;
+  }
+
+  .react-modal-img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .react-modal-img {
+    height: 300px;
+  }
+
+  .react-modal-overlay {
+    padding: 20px;
+  }
+}

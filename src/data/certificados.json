@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "titulo": "Carreira Desenvolvedor(a) Front-End React: Boas-Vindas e Primeiros Passos",
+    "tags": ["react", "front-end", "javascript", "carreira"],
+    "data": "26/11/2025",
+    "horas": "2h",
+    "imagem": "/img/Certificado Front-End react.png"
+  },
+  {
+    "id": 2,
+    "titulo": "Carreira Desenvolvimento Back-End Python: Boas-Vindas e Primeiros Passos",
+    "tags": ["python", "back-end", "programação", "carreira"],
+    "data": "14/02/2026",
+    "horas": "2h",
+    "imagem": "/img/Certificado Python.png"
+  },
+  {
+    "id": 3,
+    "titulo": "HTML e CSS: Trabalhando com Responsividade e Publicação de Projetos",
+    "tags": ["html", "css", "responsivo", "mobile"],
+    "data": "10/11/2025",
+    "horas": "6h",
+    "imagem": "/img/HTML e CSS resnpo.png"
+  },
+  {
+    "id": 4,
+    "titulo": "HTML e CSS: Praticando HTML/CSS",
+    "tags": ["html", "css", "prática"],
+    "data": "25/11/2025",
+    "horas": "8h",
+    "imagem": "/img/HTML e CSS praticando HTMLCSS.png"
+  },
+  {
+    "id": 5,
+    "titulo": "HTML e CSS: Classes, Posicionamento e Flexbox",
+    "tags": ["html", "css", "flexbox", "layout"],
+    "data": "05/10/2025",
+    "horas": "8h",
+    "imagem": "/img/HTML e CSS Classes posicionamento e Flexbox.png"
+  },
+  {
+    "id": 6,
+    "titulo": "HTML e CSS: Cabeçalho, Footer e Variáveis CSS",
+    "tags": ["html", "css", "variáveis", "cabeçalho"],
+    "data": "26/10/2025",
+    "horas": "6h",
+    "imagem": "/img/HTML e CSS cabecalho footer e variaveis CSS.png"
+  },
+  {
+    "id": 7,
+    "titulo": "HTML e CSS: Ambientes de Desenvolvimento, Estrutura de Arquivos e Tags",
+    "tags": ["html", "css", "ambiente", "estrutura"],
+    "data": "20/09/2025",
+    "horas": "8h",
+    "imagem": "/img/HTML e CSS ambientes de desenvolvimento.png"
+  },
+  {
+    "id": 8,
+    "titulo": "Lógica de Programação: Mergulhe em Programação com JavaScript",
+    "tags": ["javascript", "lógica", "programação", "js"],
+    "data": "08/10/2024",
+    "horas": "6h",
+    "imagem": "/img/programação com JavaScript.png"
+  }
+]
