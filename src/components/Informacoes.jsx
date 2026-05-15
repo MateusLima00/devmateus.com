@@ -99,11 +99,12 @@ function Informacoes() {
       </h2>
       <h3 className="item__vaga">- Assistente de TI (Atual)</h3>
       <p className="item__text">
-        Manutenção de computadores, limpeza de desktop e notebooks, verificar e controlar
-        os equipamentos da empresa, formatação, instalação e configuração de sistemas
-        operacionais e pacote Office, configuração e instalação de roteador, manutenção
-        de cabeamento estruturado, administração de servidores e firewall e instalação de
-        câmeras analógicas e IPs.
+        Desenvolvimento de soluções de automação em Python para melhoria operacional Gestão e 
+        manutenção de sistema web integrado a operações logísticas (Porto do Pecém) Gestão de 
+        dados via API  autotrac (ATIC/Telemetria), realizando cadastros de frota/veículos 
+        pesados e extração de relatórios em PostgreSQL com testes e validação via Postman 
+        Análise e suporte funcional ao ERP Protheus  Administração de servidores, firewall 
+        e infraestrutura de rede  Suporte técnico N1/N2 em ambiente multiunidades.
       </p>
       <h3 className="item__vaga">- Estagiário de Ti </h3>
       <p className="item__text"> Suporte técnico presencial e remoto nas três unidades da empresa
