@@ -1,26 +1,33 @@
-// ─────────────────────────────────────────────
-// Cabecalho.jsx — Barra de navegação fixa no topo
-//
-// Responsabilidades:
-//   • Exibir o nome/marca com animação de typewriter
-//   • Fornecer links âncora para as seções da página
-//
-// Acessibilidade:
-//   • Usa <header> e <nav> semânticos
-//   • aria-label no <nav> descreve o propósito
-// ─────────────────────────────────────────────
+/**
+ * Cabecalho — Barra de navegação fixa
+ *
+ * Responsabilidades:
+ *   • Logo estático com identidade do site
+ *   • Links âncora para as seções
+ *
+ * Acessibilidade:
+ *   • <header> + <nav> semânticos com aria-label
+ */
 
 function Cabecalho() {
   return (
     <header className="cabecalho">
-      {/* Título com efeito typewriter definido no CSS */}
-      <h3 className="cabecalho__titulo">Bem-Vindo</h3>
+      <a href="#" className="cabecalho__logo" aria-label="Ir ao início">
+        devmateus<span>.com</span>
+      </a>
 
-      {/* aria-label identifica a navegação para leitores de tela */}
-      <nav className="cabecalho__navegacao" aria-label="Navegação principal">
-        <a href="#informacoes" className="cabacalho__item">Informações</a>
-        <a href="#projetos"    className="cabacalho__item">Projetos</a>
-        <a href="#certificados" className="cabacalho__item">Certificados</a>
+      <nav aria-label="Navegação principal">
+        <ul className="cabecalho__navegacao">
+          <li>
+            <a href="#informacoes" className="cabecalho__link">Informações</a>
+          </li>
+          <li>
+            <a href="#projetos" className="cabecalho__link">Projetos</a>
+          </li>
+          <li>
+            <a href="#certificados" className="cabecalho__link">Certificados</a>
+          </li>
+        </ul>
       </nav>
     </header>
   )

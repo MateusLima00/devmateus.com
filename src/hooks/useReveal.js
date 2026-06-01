@@ -1,53 +1,94 @@
-// ─────────────────────────────────────────────
-// useReveal.js — Hook de animação de scroll
-//
-// O que faz:
-//   Observa todas as <section> da página e adiciona
-//   a classe "visivel" quando cada uma entra na viewport.
-//   O CSS de princi.css usa essa classe para animar
-//   o surgimento (opacity + translateY).
-//
-// Como usar:
-//   Chame `useReveal()` no App.jsx — ele roda uma vez
-//   e observa todas as sections automaticamente.
-//
-// Por que IntersectionObserver?
-//   É a API moderna para detectar visibilidade de elementos.
-//   Muito mais performático do que ouvir o evento "scroll"
-//   e calcular offsets manualmente.
-// ─────────────────────────────────────────────
+/**
+ * useReveal — Scroll reveal com IntersectionObserver
+ *
+ * Responsabilidades:
+ *   1. Revela <section> e <footer> adicionando classe "visivel"
+ *   2. Stagger reveal nos filhos de [data-reveal="stagger"],
+ *      com delay configurável via data-stagger-ms (padrão 80ms)
+ *      e direção via data-reveal-from
+ *   3. MutationObserver captura novos containers dinâmicos
+ *      (troca de tabs, resultados de busca)
+ */
 
 import { useEffect } from 'react'
 
 export function useReveal() {
   useEffect(() => {
-    // Seleciona todas as sections do documento
-    const sections = document.querySelectorAll('section')
-
-    const observer = new IntersectionObserver(
+    // 1. Reveal de sections e footer
+    const sectionObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Adiciona a classe que dispara a transição CSS
             entry.target.classList.add('visivel')
-
-            // Para de observar após revelar — evita re-trigger
-            // desnecessário e economiza recursos
-            observer.unobserve(entry.target)
+            sectionObserver.unobserve(entry.target)
           }
         })
       },
-      {
-        threshold: 0.12,              // inicia quando 12% da section está visível
-        rootMargin: '0px 0px -40px 0px', // margem negativa: revela um pouco antes do fim
-      }
+      { threshold: 0.06, rootMargin: '0px 0px -60px 0px' }
     )
 
-    // Começa a observar cada section
-    sections.forEach(s => observer.observe(s))
+    document.querySelectorAll('section:not(.hero)').forEach(s => sectionObserver.observe(s))
 
-    // Cleanup: desconecta o observer quando o componente desmonta
-    // (importante para evitar vazamento de memória)
-    return () => observer.disconnect()
-  }, []) // [] = roda apenas uma vez, após a montagem inicial
+    const footer = document.querySelector('footer')
+    if (footer) sectionObserver.observe(footer)
+
+    // 2. Aplica direção de entrada e dispara stagger
+    const revealStagger = (container) => {
+      const delay = parseInt(container.dataset.staggerMs || '80', 10)
+
+      const trigger = () => {
+        Array.from(container.children).forEach((child, i) => {
+          const direction = child.dataset.revealFrom || container.dataset.revealFrom || 'up'
+          child.dataset.revealFrom = direction
+          child.style.transitionDelay = `${i * delay}ms`
+          child.classList.add('reveal-item--visivel')
+        })
+        container.dataset.staggerDone = '1'
+      }
+
+      const rect = container.getBoundingClientRect()
+      const inView = rect.top < window.innerHeight && rect.bottom > 0
+
+      if (inView) {
+        trigger()
+      } else {
+        const io = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting) {
+            trigger()
+            io.disconnect()
+          }
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' })
+        io.observe(container)
+      }
+    }
+
+    document.querySelectorAll('[data-reveal="stagger"]').forEach(c => {
+      c.dataset.staggerSeen = '1'
+      revealStagger(c)
+    })
+
+    // 3. MutationObserver para conteúdo dinâmico
+    const mutationObserver = new MutationObserver(() => {
+      document.querySelectorAll('[data-reveal="stagger"]:not([data-stagger-seen])').forEach(c => {
+        c.dataset.staggerSeen = '1'
+        revealStagger(c)
+      })
+
+      document.querySelectorAll('[data-stagger-done="1"]').forEach(c => {
+        Array.from(c.children).forEach(child => {
+          if (!child.classList.contains('reveal-item--visivel')) {
+            child.style.transitionDelay = '0ms'
+            child.classList.add('reveal-item--visivel')
+          }
+        })
+      })
+    })
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true })
+
+    return () => {
+      sectionObserver.disconnect()
+      mutationObserver.disconnect()
+    }
+  }, [])
 }

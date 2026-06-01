@@ -1,0 +1,109 @@
+/* ─────────────────────────────────────────────
+   animations.css — Keyframes, scroll reveal,
+   classes de transição de entrada
+   ───────────────────────────────────────────── */
+
+/* ── Estado inicial das sections ── */
+section {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity   var(--t-reveal) var(--ease-out-expo),
+    transform var(--t-reveal) var(--ease-out-expo);
+}
+
+section.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero já visível sem animação */
+section.hero {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* ── Animações de entrada na carga da página ── */
+
+@keyframes entradaSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes entradaSlideRight {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes entradaSlideLeft {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes entradaFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.cabecalho {
+  animation: entradaSlideDown 0.6s var(--ease-out-expo) both;
+}
+
+.hero__esquerda {
+  animation: entradaSlideRight 0.7s var(--ease-out-expo) 0.15s both;
+}
+
+.hero__direita {
+  animation: entradaSlideLeft 0.7s var(--ease-out-expo) 0.3s both;
+}
+
+.ticker {
+  animation: entradaFade 0.6s var(--ease-out-expo) 0.5s both;
+}
+
+/* ── Footer reveal via IntersectionObserver ── */
+
+footer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity   var(--t-reveal) var(--ease-out-expo),
+    transform var(--t-reveal) var(--ease-out-expo);
+}
+
+footer.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Itens com stagger ── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity   var(--t-reveal) var(--ease-out-expo),
+    transform var(--t-reveal) var(--ease-out-expo);
+}
+
+/* Direções de entrada via data-reveal-from */
+.reveal-item[data-reveal-from="left"] {
+  transform: translateX(-40px);
+}
+
+.reveal-item[data-reveal-from="right"] {
+  transform: translateX(40px);
+}
+
+.reveal-item[data-reveal-from="up"] {
+  transform: translateY(40px);
+}
+
+.reveal-item[data-reveal-from="down"] {
+  transform: translateY(-40px);
+}
+
+.reveal-item--visivel {
+  opacity: 1;
+  transform: translate(0, 0);
+}

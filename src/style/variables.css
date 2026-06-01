@@ -1,0 +1,42 @@
+/* ─────────────────────────────────────────────
+   variables.css — Design tokens globais
+   ───────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg:          #0a0a0a;
+  --bg2:         #111111;
+  --bg3:         #1a1a1a;
+
+  --accent:      #4d9fff;
+  --accent-dim:  rgba(77, 159, 255, 0.15);
+  --accent-glow: rgba(77, 159, 255, 0.25);
+
+  --text:        #e8e8e8;
+  --text-sub:    #888888;
+  --text-muted:  #555555;
+  --text-dim:    #333333;
+
+  --border:      #2e2e2e;
+  --border-soft: #3e3e3e;
+  --border-mid:  #505050;
+
+  --nebula-purple: #7b4fff;
+  --nebula-cyan:   #00c8ff;
+  --nebula-indigo: #3a1f8f;
+
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+
+  --t-fast:   150ms;
+  --t-base:   300ms;
+  --t-slow:   600ms;
+  --t-reveal: 600ms;
+
+  --mouse-x: 50vw;
+  --mouse-y: 50vh;
+}

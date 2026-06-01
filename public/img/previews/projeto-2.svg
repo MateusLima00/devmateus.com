@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#0a0a0a"/>
+  <rect width="240" height="26" fill="#111111"/>
+  <circle cx="12" cy="13" r="3.5" fill="#2a2a2a"/>
+  <circle cx="22" cy="13" r="3.5" fill="#2a2a2a"/>
+  <circle cx="32" cy="13" r="3.5" fill="#2a2a2a"/>
+  <text x="80" y="17" font-family="monospace" font-size="7" fill="#555555">coletar_afd.py</text>
+  <text x="14" y="46" font-family="monospace" font-size="9" fill="#4d9fff">$ python coletar_afd.py</text>
+  <text x="14" y="62" font-family="monospace" font-size="8" fill="#555555">[·] Conectando ao servidor...</text>
+  <text x="14" y="76" font-family="monospace" font-size="8" fill="#888888">[✓] Conectado</text>
+  <text x="14" y="90" font-family="monospace" font-size="8" fill="#888888">[✓] Baixando AFD — REP 01</text>
+  <text x="14" y="104" font-family="monospace" font-size="8" fill="#888888">[✓] Baixando AFD — REP 02</text>
+  <text x="14" y="118" font-family="monospace" font-size="8" fill="#888888">[✓] Baixando AFD — REP 03</text>
+  <text x="14" y="132" font-family="monospace" font-size="8" fill="#4ade80">[✓] 3 arquivos coletados</text>
+  <text x="14" y="146" font-family="monospace" font-size="8" fill="#4ade80">[✓] E-mail enviado — 4.2s</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" fill="#0a0a0a"/>
+  <rect width="240" height="26" fill="#111111"/>
+  <circle cx="12" cy="13" r="3.5" fill="#2a2a2a"/>
+  <circle cx="22" cy="13" r="3.5" fill="#2a2a2a"/>
+  <circle cx="32" cy="13" r="3.5" fill="#2a2a2a"/>
+  <text x="50" y="17" font-family="monospace" font-size="7" fill="#555555">variacao-dolar-em-real.vercel.app</text>
+  <rect x="12" y="38" width="104" height="52" fill="#111111" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="20" y="54" font-family="monospace" font-size="7" fill="#555555">USD / BRL</text>
+  <text x="20" y="74" font-family="monospace" font-size="22" font-weight="bold" fill="#e8e8e8">5.82</text>
+  <text x="20" y="84" font-family="monospace" font-size="7" fill="#4ade80">▲ +0.32%</text>
+  <rect x="124" y="38" width="104" height="52" fill="#111111" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="132" y="54" font-family="monospace" font-size="7" fill="#555555">EUR / BRL</text>
+  <text x="132" y="74" font-family="monospace" font-size="22" font-weight="bold" fill="#e8e8e8">6.31</text>
+  <text x="132" y="84" font-family="monospace" font-size="7" fill="#f87171">▼ -0.11%</text>
+  <rect x="12" y="102" width="216" height="46" fill="#111111" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="18" y="114" font-family="monospace" font-size="7" fill="#555555">variação 7 dias</text>
+  <polyline points="18,140 42,130 66,136 90,122 114,132 138,118 162,126 186,113 210,120 228,115" fill="none" stroke="#4d9fff" stroke-width="1.5" stroke-linejoin="round"/>
+  <polyline points="18,140 42,130 66,136 90,122 114,132 138,118 162,126 186,113 210,120 228,115 228,145 18,145" fill="rgba(77,159,255,0.08)"/>
+</svg>
