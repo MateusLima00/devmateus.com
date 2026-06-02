@@ -3,13 +3,14 @@
  *
  * Responsabilidades:
  *   • Grid 2 colunas com separador de 1px
- *   • Floating preview de imagem no hover via useCursorPreview
+ *   • Floating preview de imagem no hover via useCursorPreview (desktop only)
  *
  * Para adicionar projeto:
  *   1. Adicione objeto no array PROJETOS abaixo
  *   2. Adicione screenshot em /public/img/previews/projeto-{id}.png
  */
 
+import { useState, useEffect } from 'react'
 import CursorPreview from './CursorPreview.jsx'
 import { useCursorPreview } from '../hooks/useCursorPreview'
 
@@ -37,6 +38,15 @@ const PROJETOS = [
 
 function Projetos() {
   const { preview, elRef, handlers } = useCursorPreview()
+  const [isTouch, setIsTouch] = useState(false)
+
+  // Detecta touch após mount — seguro para SSR/Vite
+  useEffect(() => {
+    const mq = window.matchMedia('(hover: none)')
+    setIsTouch(mq.matches)
+    mq.addEventListener('change', e => setIsTouch(e.matches))
+    return () => mq.removeEventListener('change', e => setIsTouch(e.matches))
+  }, [])
 
   return (
     <section id="projetos">
@@ -49,9 +59,9 @@ function Projetos() {
               key={projeto.id}
               className="projeto__card reveal-item"
               data-reveal-from="up"
-              onMouseEnter={() => handlers.onMouseEnter(projeto.previewImg)}
-              onMouseLeave={handlers.onMouseLeave}
-              onMouseMove={handlers.onMouseMove}
+              onMouseEnter={!isTouch ? () => handlers.onMouseEnter(projeto.previewImg) : undefined}
+              onMouseLeave={!isTouch ? handlers.onMouseLeave : undefined}
+              onMouseMove={!isTouch ? handlers.onMouseMove : undefined}
             >
               <span className="projeto__numero">
                 {String(index + 1).padStart(3, '0')} ·
