@@ -1,15 +1,42 @@
 [
   {
     "id": 1,
-    "area": "front-end",
-    "titulo": "Carreira Desenvolvedor(a) Front-End React: Boas-Vindas e Primeiros Passos",
-    "tags": ["react", "front-end", "javascript", "carreira"],
-    "data": "26/11/2025",
-    "horas": "2h",
-    "imagem": "/img/Certificado Front-End react.png"
+    "area": "linux",
+    "titulo": "Certificação Linux LPI Essentials: Evolution and Distributions",
+    "tags": ["linux", "lpi", "certificação", "infraestrutura"],
+    "data": "31/05/2026",
+    "horas": "8h",
+    "imagem": "/img/Certificacao Linux LPI Essentials Evolution and Distributions.png"
   },
   {
     "id": 2,
+    "area": "linux",
+    "titulo": "Linux: criando script para processamento de arquivos de logs",
+    "tags": ["linux", "shell", "script", "bash"],
+    "data": "31/05/2026",
+    "horas": "10h",
+    "imagem": "/img/Linux criando script processamento de logs.png"
+  },
+  {
+    "id": 3,
+    "area": "linux",
+    "titulo": "Linux: gerenciando diretórios, arquivos, permissões e processos",
+    "tags": ["linux", "terminal", "permissões", "infraestrutura"],
+    "data": "31/05/2026",
+    "horas": "8h",
+    "imagem": "/img/Linux gerenciando diretorios arquivos permissoes.png"
+  },
+  {
+    "id": 4,
+    "area": "linux",
+    "titulo": "Linux para cibersegurança: administração, shell scripting e Kali Linux",
+    "tags": ["linux", "kali", "cibersegurança", "shell scripting"],
+    "data": "31/05/2026",
+    "horas": "12h",
+    "imagem": "/img/Linux para ciberseguranca administracao shell scripting.png"
+  },
+  {
+    "id": 5,
     "area": "back-end",
     "titulo": "Carreira Desenvolvimento Back-End Python: Boas-Vindas e Primeiros Passos",
     "tags": ["python", "back-end", "programação", "carreira"],
@@ -18,16 +45,34 @@
     "imagem": "/img/Certificado Python.png"
   },
   {
-    "id": 3,
+    "id": 6,
     "area": "front-end",
-    "titulo": "HTML e CSS: Trabalhando com Responsividade e Publicação de Projetos",
-    "tags": ["html", "css", "responsivo", "mobile"],
-    "data": "10/11/2025",
-    "horas": "6h",
-    "imagem": "/img/HTML e CSS resnpo.png"
+    "titulo": "HTML e CSS: ambiente, estrutura e estilo",
+    "tags": ["html", "css", "ambiente", "estilo"],
+    "data": "02/03/2026",
+    "horas": "20h",
+    "imagem": "/img/HTML e CSS ambiente estrutura e estilo.png"
   },
   {
-    "id": 4,
+    "id": 7,
+    "area": "fundamentos",
+    "titulo": "Internet: entendendo os fundamentos da web",
+    "tags": ["internet", "web", "fundamentos", "redes"],
+    "data": "02/03/2026",
+    "horas": "8h",
+    "imagem": "/img/Internet entendendo os fundamentos da web.png"
+  },
+  {
+    "id": 8,
+    "area": "front-end",
+    "titulo": "Carreira Desenvolvedor(a) Front-End React: Boas-Vindas e Primeiros Passos",
+    "tags": ["react", "front-end", "javascript", "carreira"],
+    "data": "26/11/2025",
+    "horas": "2h",
+    "imagem": "/img/Certificado Front-End react.png"
+  },
+  {
+    "id": 9,
     "area": "front-end",
     "titulo": "HTML e CSS: Praticando HTML/CSS",
     "tags": ["html", "css", "prática"],
@@ -36,16 +81,16 @@
     "imagem": "/img/HTML e CSS praticando HTMLCSS.png"
   },
   {
-    "id": 5,
+    "id": 10,
     "area": "front-end",
-    "titulo": "HTML e CSS: Classes, Posicionamento e Flexbox",
-    "tags": ["html", "css", "flexbox", "layout"],
-    "data": "05/10/2025",
-    "horas": "8h",
-    "imagem": "/img/HTML e CSS Classes posicionamento e Flexbox.png"
+    "titulo": "HTML e CSS: Trabalhando com Responsividade e Publicação de Projetos",
+    "tags": ["html", "css", "responsivo", "mobile"],
+    "data": "10/11/2025",
+    "horas": "6h",
+    "imagem": "/img/HTML e CSS resnpo.png"
   },
   {
-    "id": 6,
+    "id": 11,
     "area": "front-end",
     "titulo": "HTML e CSS: Cabeçalho, Footer e Variáveis CSS",
     "tags": ["html", "css", "variáveis", "cabeçalho"],
@@ -54,7 +99,16 @@
     "imagem": "/img/HTML e CSS cabecalho footer e variaveis CSS.png"
   },
   {
-    "id": 7,
+    "id": 12,
+    "area": "front-end",
+    "titulo": "HTML e CSS: Classes, Posicionamento e Flexbox",
+    "tags": ["html", "css", "flexbox", "layout"],
+    "data": "05/10/2025",
+    "horas": "8h",
+    "imagem": "/img/HTML e CSS Classes posicionamento e Flexbox.png"
+  },
+  {
+    "id": 13,
     "area": "front-end",
     "titulo": "HTML e CSS: Ambientes de Desenvolvimento, Estrutura de Arquivos e Tags",
     "tags": ["html", "css", "ambiente", "estrutura"],
@@ -63,7 +117,16 @@
     "imagem": "/img/HTML e CSS ambientes de desenvolvimento.png"
   },
   {
-    "id": 8,
+    "id": 14,
+    "area": "fundamentos",
+    "titulo": "Pensamento Computacional: fundamentos da computação e lógica de programação",
+    "tags": ["lógica", "fundamentos", "computação", "programação"],
+    "data": "16/09/2025",
+    "horas": "8h",
+    "imagem": "/img/Pensamento computacional fundamentos.png"
+  },
+  {
+    "id": 15,
     "area": "linguagem",
     "titulo": "Lógica de Programação: Mergulhe em Programação com JavaScript",
     "tags": ["javascript", "lógica", "programação", "js"],

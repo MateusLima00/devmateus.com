@@ -61,6 +61,14 @@ const CONHECIMENTOS = [
       { nome: 'CFTV (Câmeras analógicas e IP)', nivel: 'Avançado' },
       { nome: 'Administração de Servidores e Firewall', nivel: 'Intermediário' },
       { nome: 'Linux', nivel: 'Intermediário' },
+      { nome: 'Cibersegurança & Kali Linux', nivel: 'Iniciante' },
+    ],
+  },
+  {
+    categoria: 'Fundamentos',
+    itens: [
+      { nome: 'Internet & Fundamentos da Web', nivel: 'Intermediário' },
+      { nome: 'Pensamento Computacional', nivel: 'Intermediário' },
     ],
   },
   {
@@ -74,19 +82,13 @@ const CONHECIMENTOS = [
       { nome: 'SQL · PostgreSQL · MySQL', nivel: 'Iniciante' },
     ],
   },
-  {
-    categoria: 'Geral',
-    itens: [
-      { nome: 'Informática Geral', nivel: 'Avançado' },
-    ],
-  },
 ]
 
 // Links sociais do card de perfil
 const LINKS_SOCIAIS = [
-  { label: 'gh', href: 'https://github.com/MateusLima00', ariaLabel: 'GitHub de Mateus Lima' },
-  { label: 'in', href: 'https://www.linkedin.com/in/mateus-costa-3b5960207/', ariaLabel: 'LinkedIn de Mateus Lima' },
-  { label: 'ig', href: '#', ariaLabel: 'Instagram de Mateus Lima' },
+  { label: 'Gh', href: 'https://github.com/MateusLima00', ariaLabel: 'GitHub de Mateus Lima' },
+  { label: 'Li', href: 'https://www.linkedin.com/in/mateus-costa-3b5960207/', ariaLabel: 'LinkedIn de Mateus Lima' },
+  { label: 'Ig', href: 'https://www.instagram.com/mateuslmx_?igsh=eXQ3YzNtODR2MWo0&utm_source=qr', ariaLabel: 'Instagram de Mateus Lima' },
 ]
 
 // Skills exibidas no card de perfil
