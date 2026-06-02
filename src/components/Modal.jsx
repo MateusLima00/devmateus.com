@@ -10,9 +10,9 @@
  *   • Fecha com Escape, clique no overlay e botão ✕
  *   • Foco vai para o botão de fechar ao abrir
  *
- * UX mobile:
- *   • Trava scroll do body enquanto aberto (iOS Safari)
- *   • Centralizado na tela (não fica colado na base)
+ * UX mobile/desktop:
+ *   • Desktop: só overflow:hidden (sem position:fixed — evita pulo pro topo)
+ *   • iOS Safari: position:fixed necessário para travar scroll de verdade
  */
 
 import { useEffect, useRef } from 'react'
@@ -24,12 +24,21 @@ function Modal({ cert, onFechar }) {
   useEffect(() => {
     btnRef.current?.focus()
 
-    // Trava scroll do body — evita rolar a página por baixo do modal no iOS
+    const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+
     const scrollY = window.scrollY
-    document.body.style.overflow = 'hidden'
-    document.body.style.position = 'fixed'
-    document.body.style.top = `-${scrollY}px`
-    document.body.style.width = '100%'
+
+    if (isIOS) {
+      // iOS Safari ignora overflow:hidden no body — precisa de position:fixed
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.width = '100%'
+      document.body.style.overflow = 'hidden'
+    } else {
+      // Desktop e Android: overflow:hidden basta, sem pulo de scroll
+      document.body.style.overflow = 'hidden'
+    }
 
     const handleKeyDown = e => {
       if (e.key === 'Escape') onFechar()
@@ -37,12 +46,15 @@ function Modal({ cert, onFechar }) {
     document.addEventListener('keydown', handleKeyDown)
 
     return () => {
-      // Restaura scroll exatamente onde estava
-      document.body.style.overflow = ''
-      document.body.style.position = ''
-      document.body.style.top = ''
-      document.body.style.width = ''
-      window.scrollTo(0, scrollY)
+      if (isIOS) {
+        document.body.style.position = ''
+        document.body.style.top = ''
+        document.body.style.width = ''
+        document.body.style.overflow = ''
+        window.scrollTo({ top: scrollY, behavior: 'instant' })
+      } else {
+        document.body.style.overflow = ''
+      }
       document.removeEventListener('keydown', handleKeyDown)
     }
   }, [onFechar])
