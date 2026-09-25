@@ -1,0 +1,44 @@
+/* =========================================================
+   RESET E BASE DO DOCUMENTO
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Só no html, não em html+body: colocar overflow-x:hidden nos dois faz o
+   body virar uma caixa de rolagem própria em alguns navegadores (ele para
+   de "propagar" o scroll pro viewport), criando uma segunda barra vertical
+   por dentro da barra normal da página — um bug clássico de CSS. */
+html {
+  overflow-x: hidden; /* evita scroll lateral causado pelos elementos decorativos do hero */
+}
+
+/* Enquanto a intro (assets/js/intro.js) está tocando: trava o scroll
+   (inclusive touch/teclado, por isso no <html>, não só no <body>) e
+   desliga clique/arraste no conteúdo por trás do overlay — só dá pra
+   ver a janela do VS Code, nada de mexer na página ainda. */
+html.intro-ativa {
+  overflow: hidden;
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+html.intro-ativa body {
+  overflow: hidden;
+  height: 100%;
+}
+
+html.intro-ativa .container-devmateus {
+  pointer-events: none;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: system-ui, sans-serif;
+}

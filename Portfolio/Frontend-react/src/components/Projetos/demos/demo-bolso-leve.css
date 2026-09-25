@@ -1,0 +1,650 @@
+/* =========================================================
+   PRÉVIA INTERATIVA — "Bolso Leve" (projeto pessoal real, ver
+   DemoBolsoLeve.jsx). Paleta, tipografia e componentes copiados das
+   variáveis reais do app (src/index.css: tema claro, off-white #fbfcfa,
+   tinta #173b4a de destaque, verde-menta de sucesso, coral de erro,
+   fontes Manrope + Inter) — mesmo sistema de design, não reinterpretado.
+   Tudo prefixado "bl-" (Bolso Leve) pra nunca colidir com o resto do
+   CSS do portfólio.
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap");
+
+.bl-monitor {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto 18px;
+  border-radius: 14px;
+  background: #1c1f26;
+  padding: 10px 10px 22px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.28), 0 2px 6px rgba(15, 23, 42, 0.12);
+}
+
+.bl-monitor-barra {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 6px 10px;
+}
+
+.bl-monitor-bolinhas {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.bl-monitor-bolinhas span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.bl-monitor-bolinhas span:nth-child(1) { background: #ff5f57; }
+.bl-monitor-bolinhas span:nth-child(2) { background: #febc2e; }
+.bl-monitor-bolinhas span:nth-child(3) { background: #28c840; }
+
+.bl-monitor-url {
+  flex: 1;
+  min-width: 0;
+  background: #2b2f38;
+  color: #9aa1ac;
+  font-size: 11.5px;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  padding: 6px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bl-monitor-tela {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bl-shell {
+  --bl-bg: #fbfcfa;
+  --bl-surface: #ffffff;
+  --bl-surface-2: #f6f8f7;
+  --bl-border: #dbe4e3;
+  --bl-accent: #173b4a;
+  --bl-accent-dark: #ddebe4;
+  --bl-text: #102f3d;
+  --bl-text-2: #405165;
+  --bl-text-muted: #7d8997;
+  --bl-danger: #d78673;
+  --bl-success: #4f817d;
+
+  position: relative;
+  width: 100%;
+  height: min(600px, 74vh);
+  overflow: hidden;
+  background: var(--bl-bg);
+  color: var(--bl-text);
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+}
+
+.bl-marca {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.bl-marca span {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 17px;
+  border-radius: 100% 0 100% 0;
+  transform: rotate(-28deg);
+  background: var(--bl-success);
+}
+
+.bl-marca span:first-child {
+  left: 0;
+  top: 4px;
+}
+
+.bl-marca span:last-child {
+  left: 9px;
+  top: 0;
+  height: 14px;
+  background: #9ac3bc;
+  transform: rotate(30deg);
+}
+
+/* ── Login ── */
+.bl-login {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(260px, 1.1fr);
+}
+
+.bl-login-historia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px 18px;
+  background: #f5f1e9;
+  overflow: hidden;
+}
+
+.bl-login-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.bl-login-kicker {
+  color: var(--bl-success);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.bl-login-titulo {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: clamp(20px, 3vw, 28px);
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin: 0;
+}
+
+.bl-login-sub {
+  color: var(--bl-text-2);
+  font-size: 11.5px;
+  line-height: 1.5;
+  margin-top: 8px;
+  max-width: 220px;
+}
+
+.bl-login-nota {
+  padding-top: 10px;
+  border-top: 1px solid #ded8ce;
+  color: #8b8b84;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bl-login-formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.bl-login-card {
+  width: 100%;
+  max-width: 270px;
+  border: 1px solid #e4eae8;
+  border-radius: 16px;
+  background: var(--bl-surface);
+  box-shadow: 0 14px 40px rgba(23, 59, 74, 0.08);
+  padding: 22px 22px 18px;
+}
+
+.bl-login-card-kicker {
+  color: var(--bl-success);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.bl-login-card-titulo {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  margin: 0 0 4px;
+}
+
+.bl-login-card-sub {
+  color: var(--bl-text-2);
+  font-size: 11.5px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.bl-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.bl-campo label {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--bl-text);
+}
+
+.bl-campo input {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #d7e1df;
+  border-radius: 10px;
+  background: #fbfcfb;
+  color: var(--bl-text);
+  font-size: 12.5px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 160ms ease;
+}
+
+.bl-campo input:focus {
+  border-color: var(--bl-success);
+  background: #fff;
+}
+
+.bl-lembrar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  color: var(--bl-text-2);
+  margin-bottom: 4px;
+}
+
+.bl-btn-entrar {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: var(--bl-accent);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: opacity 150ms ease;
+}
+
+.bl-btn-entrar:hover {
+  opacity: 0.9;
+}
+
+.bl-login-privacidade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 14px;
+  color: var(--bl-text-muted);
+  font-size: 9.5px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .bl-login {
+    grid-template-columns: 1fr;
+  }
+  .bl-login-historia {
+    display: none;
+  }
+}
+
+/* ── App ── */
+.bl-app {
+  display: flex;
+  height: 100%;
+}
+
+.bl-sidebar {
+  width: 190px;
+  flex-shrink: 0;
+  background: var(--bl-surface-2);
+  border-right: 1px solid var(--bl-border);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bl-sidebar-marca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 0 8px;
+  margin-bottom: 14px;
+}
+
+.bl-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  color: var(--bl-text-2);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.bl-nav-item:hover {
+  background: #eef3f1;
+}
+
+.bl-nav-item.bl-ativo {
+  background: var(--bl-accent-dark);
+  color: var(--bl-accent);
+  font-weight: 600;
+}
+
+.bl-conteudo {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.bl-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bl-saudacao {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: -0.03em;
+  margin: 0 0 2px;
+}
+
+.bl-topo-sub {
+  color: var(--bl-text-2);
+  font-size: 12px;
+}
+
+.bl-btn-atualizar {
+  font-size: 11.5px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--bl-border);
+  background: var(--bl-surface);
+  color: var(--bl-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  transition: background-color 150ms ease;
+}
+
+.bl-btn-atualizar:hover {
+  background: var(--bl-surface-2);
+}
+
+.bl-girando {
+  animation: bl-girar 900ms linear infinite;
+}
+
+@keyframes bl-girar {
+  to { transform: rotate(360deg); }
+}
+
+.bl-linha-topo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(2, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.bl-card {
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-border);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(23, 59, 74, 0.05);
+}
+
+.bl-card-saldo {
+  background: color-mix(in srgb, var(--bl-success) 14%, var(--bl-surface));
+  border-color: color-mix(in srgb, var(--bl-success) 28%, var(--bl-border));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bl-card-label {
+  font-size: 11px;
+  color: var(--bl-text-2);
+  font-weight: 600;
+}
+
+.bl-card-valor-grande {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  margin: 6px 0 4px;
+}
+
+.bl-card-tendencia {
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.bl-card-icone {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bl-card-mini-valor {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  margin: 8px 0 2px;
+}
+
+.bl-linha-meio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(180px, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.bl-evolucao-legenda {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bl-evolucao-barras {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 80px;
+}
+
+.bl-evolucao-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bl-evolucao-mes {
+  font-size: 9px;
+  color: var(--bl-text-muted);
+  margin-top: 4px;
+}
+
+.bl-proxima-conta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--bl-border);
+  font-size: 11.5px;
+}
+
+.bl-proxima-conta:last-child {
+  border-bottom: none;
+}
+
+.bl-proxima-icone {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bl-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Tabela de transações */
+.bl-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11.5px;
+}
+
+.bl-tabela th {
+  text-align: left;
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--bl-text-muted);
+  padding-bottom: 8px;
+}
+
+.bl-tabela td {
+  padding: 7px 6px 7px 0;
+  border-top: 1px solid var(--bl-border);
+}
+
+.bl-tag-categoria {
+  display: inline-flex;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 10px;
+  background: var(--bl-surface-2);
+  color: var(--bl-text-2);
+}
+
+/* Metas */
+.bl-metas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+}
+
+.bl-meta-card {
+  background: var(--bl-surface-2);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.bl-meta-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bl-progresso-trilho {
+  height: 6px;
+  background: var(--bl-border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.bl-progresso-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 400ms ease;
+}
+
+.bl-progresso-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--bl-text-muted);
+  margin-top: 6px;
+}
+
+/* Resumo 4 cards */
+.bl-resumo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.bl-resumo-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: var(--bl-text-2);
+}
+
+.bl-resumo-valor {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+}
+
+.bl-resumo-sub {
+  font-size: 10.5px;
+  color: var(--bl-text-muted);
+  margin-top: 3px;
+}
+
+.bl-secao-titulo {
+  font-size: 12.5px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.bl-em-breve {
+  color: var(--bl-text-muted);
+  font-size: 12.5px;
+  padding: 30px 0;
+  text-align: center;
+}

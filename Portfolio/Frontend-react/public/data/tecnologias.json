@@ -1,0 +1,67 @@
+[
+  {
+    "titulo": "Linguagens",
+    "itens": [
+      { "nome": "Python", "icone": "/img/ICONES-LINGUAGENS/icons8-python-48.png", "cor": "#e8f0fe" },
+      { "nome": "JavaScript", "icone": "/img/ICONES-LINGUAGENS/icons8-javascript-48.png", "cor": "#fdf8df" },
+      { "nome": "TypeScript", "icone": "/img/ICONES-LINGUAGENS/icons8-texto-datilografado-48.png", "cor": "#e6f0fb" },
+      { "nome": "PHP", "icone": "/img/ICONES-LINGUAGENS/icons8-php-48.png", "cor": "#eeeafc" },
+      { "nome": "Go", "icone": "/img/ICONES-LINGUAGENS/icons8-ir-48.png", "cor": "#e3f4fb" }
+    ]
+  },
+  {
+    "titulo": "Frameworks & Bibliotecas",
+    "itens": [
+      { "nome": "React", "icone": "/img/ICONES-ESTRUTURAS/icons8-reagir-40.png", "cor": "#e6f6fd" },
+      { "nome": "Vue.js", "icone": "/img/ICONES-ESTRUTURAS/icons8-vuejs-48.png", "cor": "#eaf8ee" },
+      { "nome": "Node.js", "icone": "/img/ICONES-ESTRUTURAS/icons8-nodejs-48.png", "cor": "#eaf8ee" },
+      { "nome": "Fastify", "icone": "/img/ICONES-ESTRUTURAS/icons8-rapidamente-48.png", "cor": "#f1f1f1" },
+      { "nome": "Tailwind CSS", "icone": "/img/ICONES-LINGUAGENS/icons8-tailwind-css-48.png", "cor": "#e6f6fd" }
+    ]
+  },
+  {
+    "titulo": "Bancos de Dados",
+    "itens": [
+      { "nome": "MySQL", "icone": "/img/ICONES-BANCODEDADOS/icons8-logo-mysql-48.png", "cor": "#e6f0fb" },
+      { "nome": "PostgreSQL", "icone": "/img/ICONES-BANCODEDADOS/icons8-postgresql-24.png", "cor": "#e6eefb" },
+      { "nome": "SQL Server", "icone": "/img/ICONES-BANCODEDADOS/icons8-sql-48.png", "cor": "#eaf0fb" }
+    ]
+  },
+  {
+    "titulo": "Ferramentas de Dev",
+    "itens": [
+      { "nome": "Git", "icone": "/img/ICONES-F(DESENVOLVIMENTO/icons8-git-48.png", "cor": "#fdece9" },
+      { "nome": "GitLab", "icone": "/img/ICONES-F(DESENVOLVIMENTO/icons8-gitlab-32.png", "cor": "#fdece9" },
+      { "nome": "VS Code", "icone": "/img/ICONES-F(DESENVOLVIMENTO/icons8-visual-studio-code-2019-48.png", "cor": "#e6f0fb" },
+      { "nome": "Terminal", "icone": "/img/ICONES-F(DESENVOLVIMENTO/icons8-terminal-48.png", "cor": "#f1f1f1" },
+      { "nome": "SSH", "icone": "/img/ICONES-F(DESENVOLVIMENTO/icons8-ssh-48.png", "cor": "#f1f1f1" },
+      { "nome": "Postman", "icone": "/img/ICONES-F(DESENVOLVIMENTO/icons8-carteiro-inc.-24.png", "cor": "#fdf1e9" }
+    ]
+  },
+  {
+    "titulo": "Nuvem & DevOps",
+    "itens": [
+      { "nome": "Docker", "icone": "/img/ICONES-SERVICOS/icons8-docker-48.png", "cor": "#e6f0fb" },
+      { "nome": "Nginx", "icone": "/img/ICONES-SERVICOS/icons8-nginx-24.png", "cor": "#eaf8ee" },
+      { "nome": "Firebase", "icone": "/img/ICONES-NUVEM&DEVOPS/icons8-firebase-24.png", "cor": "#fdf1e9" },
+      { "nome": "Supabase", "icone": "/img/ICONES-NUVEM&DEVOPS/icons8-supabase-48.png", "cor": "#eaf8ee" }
+    ]
+  },
+  {
+    "titulo": "IA & APIs",
+    "itens": [
+      { "nome": "Claude AI", "icone": "/img/ICONES-FERRRAMENTAS/icons8-claude-ai-48.png", "cor": "#fdf1e9" },
+      { "nome": "API", "icone": "/img/ICONES-FERRRAMENTAS/icons8-api-48.png", "cor": "#e6f0fb" },
+      { "nome": "Chatbot", "icone": "/img/ICONES-FERRRAMENTAS/icons8-chatbot-48.png", "cor": "#eeeafc" }
+    ]
+  }, 
+  {
+    "titulo": "Especialidades",
+    "itens": [
+      { "nome": "Arquitetura limpa", "cor": "#ffffff", "borda": "#101010" },
+      { "nome": "Qualidade do código", "cor": "#ffffff", "borda": "#101010" },
+      { "nome": "Automação", "cor": "#ffffff", "borda": "#101010" },
+      { "nome": "Otimização de desempenho", "cor": "#ffffff", "borda": "#101010" }
+    ]
+  }
+]

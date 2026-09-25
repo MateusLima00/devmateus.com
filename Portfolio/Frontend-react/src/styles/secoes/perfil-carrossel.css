@@ -1,0 +1,170 @@
+/* =========================================================
+   SEÇÃO 2 — PERFIL + REDES + CARROSSEL DE TECNOLOGIAS
+   Tudo empilhado do lado direito da seção 2, ao lado do
+   terminal (ver secoes/terminal.css). Carrossel alimentado por
+   assets/js/carrossel-tecnologias.js e assets/data/tecnologias.json.
+   ========================================================= */
+
+.perfil_redes_sessao_dois {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: min(600px, 100%);
+}
+
+.perfil_redes_sessao_dois__foto {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: none;
+  object-fit: cover;
+  background: #1a1a1a; /* aparece só se a foto ainda não tiver carregado/existir */
+}
+
+.lista_redes {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+}
+
+.lista_redes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  transition: transform 200ms ease;
+}
+
+.lista_redes a:hover {
+  transform: translateY(-2px);
+}
+
+.lista_redes img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.carrossel-tech__titulo-externo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Linha do carrossel: seta — card — seta, lado a lado. Os pontinhos de
+   posição ficam numa linha própria, abaixo (ver .carrossel-tech__pontos). */
+.carrossel-tech__linha {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+/* Card do carrossel — mesma linguagem visual do card de referência
+   (fundo branco, cantos arredondados, pills coloridas por tecnologia). */
+.carrossel-tech {
+  flex: 1;
+  min-width: 0; /* sem isso o flex item não encolhe e empurra as setas pra fora */
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.25em 3em;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.carrossel-tech__card {
+  height: 168px; /* fixo — categorias com mais ou menos itens não podem mudar o tamanho do card (um pouco mais alto pra caber nome quebrado em 2 linhas) */
+  overflow: hidden;
+  transition: opacity 450ms ease; /* mantido em sincronia com DURACAO_TRANSICAO_MS em carrossel-tecnologias.js */
+  opacity: 1;
+}
+
+.carrossel-tech__card--transicionando {
+  opacity: 0;
+}
+
+.carrossel-tech__titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.carrossel-tech__titulo-icone {
+  color: #27ae60;
+  font-family: monospace;
+  font-weight: 700;
+}
+
+/* Grade fixa de 2 colunas — organiza os itens em linhas alinhadas mesmo
+   com o card mais estreito (padding horizontal grande de propósito),
+   em vez de deixar um flex-wrap "solto" que quebra de formas diferentes
+   dependendo do tamanho do nome de cada tecnologia. */
+.carrossel-tech__grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 12px;
+  list-style: none;
+}
+
+.carrossel-tech__pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.carrossel-tech__pill-icone {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.carrossel-tech__seta {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #101010;
+  background: none;
+  font-size: 18px;
+  line-height: 1;
+  color: #101010;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.carrossel-tech__seta:hover {
+  background-color: #10101014;
+}
+
+.carrossel-tech__pontos {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.carrossel-tech__ponto {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: #11111129;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 150ms ease;
+}
+
+.carrossel-tech__ponto--ativo {
+  background: #5598e1;
+}

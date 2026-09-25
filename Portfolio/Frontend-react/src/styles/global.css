@@ -1,0 +1,22 @@
+/* =========================================================
+   PONTO DE ENTRADA — só imports, organizados por seção.
+   Ordem importa: "base" primeiro (variáveis/reset ficam
+   disponíveis pro resto), "responsivo.css" por último (pra
+   sempre sobrescrever as regras "desktop" de cada seção).
+   ========================================================= */
+
+@import url("base/variaveis.css");
+@import url("base/reset.css");
+
+@import url("secoes/intro.css");
+@import url("secoes/barra-navegacao.css");
+@import url("secoes/hero.css");
+@import url("secoes/terminal.css");
+@import url("secoes/perfil-carrossel.css");
+@import url("secoes/contato.css");
+@import url("secoes/rodape.css");
+
+@import url("base/reveal.css");
+@import url("transicao-pagina.css");
+
+@import url("responsivo.css");

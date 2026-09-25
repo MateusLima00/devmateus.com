@@ -1,0 +1,198 @@
+/* =========================================================
+   SEÇÃO 3 — CONTATO
+   Formulário (assets/js/formulario-contato.js) à esquerda,
+   formas diretas de contato à direita. Fundo branco — continua
+   de onde a seção 2 termina o degradê (ver secoes/terminal.css).
+   ========================================================= */
+
+.container__sessao_utres-devmateus {
+  min-height: 60vh;
+  padding: 96px clamp(24px, 6vw, 96px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(48px, 8vw, 120px);
+  background: var(--paper);
+}
+
+
+/* ── Formulário (article) ── */
+.formulario_contato-devmateus {
+  flex: 1 1 420px;
+  max-width: 560px;
+}
+
+.formulario-contato__titulo {
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.formulario-contato__subtitulo {
+  margin-top: 8px;
+  margin-bottom: 28px;
+  color: #5a5a5a;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formulario-contato__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formulario-contato__campo label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.formulario-contato__campo input,
+.formulario-contato__campo textarea {
+  padding: 12px 14px;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  background: #fafafa;
+  resize: vertical;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.formulario-contato__campo input:focus,
+.formulario-contato__campo textarea:focus {
+  outline: none;
+  border-color: #2443a5;
+  background: #ffffff;
+}
+
+.formulario-contato__campo input:disabled,
+.formulario-contato__campo textarea:disabled {
+  background: #efefef;
+  color: #9a9a9a;
+  cursor: not-allowed;
+}
+
+/* Honeypot: existe só pra bots preencherem, invisível pra gente de
+   verdade. display:none é ignorado por alguns bots — por isso ficamos
+   com posicionamento fora da tela em vez disso. */
+.formulario-contato__campo--honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.formulario-contato__rodape-campo {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.formulario-contato__contador {
+  flex-shrink: 0;
+  font-size: 11.5px;
+  color: #9a9a9a;
+}
+
+.formulario-contato__erro {
+  min-height: 16px;
+  font-size: 12px;
+  color: #d64545;
+}
+
+.formulario-contato__status {
+  min-height: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.formulario-contato__status--sucesso { color: #27ae60; }
+.formulario-contato__status--erro { color: #d64545; }
+.formulario-contato__status--aviso { color: #9a7a1a; }
+
+.formulario-contato__botao {
+  align-self: flex-start;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 100px;
+  background: #2443a5;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+
+.formulario-contato__botao:hover:not(:disabled) {
+  background: #1a3480;
+  transform: translateY(-2px);
+}
+
+.formulario-contato__botao:disabled {
+  background: #c8c8c8;
+  cursor: not-allowed;
+}
+
+
+/* ── Contatos diretos (aside) ── */
+.contatos-devmateus {
+  flex: 0 1 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contatos-devmateus__titulo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.contatos-devmateus__lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contatos-devmateus__lista a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.contatos-devmateus__lista a:hover {
+  border-color: #2443a5;
+  background: #f5f8ff;
+}
+
+.contatos-devmateus__rotulo {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9a9a9a;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.contatos-devmateus__valor {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}

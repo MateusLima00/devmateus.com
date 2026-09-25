@@ -1,0 +1,121 @@
+/* =========================================================
+   INTRO (assets/js/intro.js)
+   Tela cheia que cobre o site ao carregar: uma janela estilo
+   VS Code "digita" um script Python, roda e mostra a saída no
+   terminal. Depois de um tempo, a janela some e o overlay some
+   junto, revelando o hero por trás (que dispara o reveal do
+   texto — ver [data-reveal-apos-intro] no HTML e base/reveal.css).
+   ========================================================= */
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #050608;
+  transition: opacity 700ms ease;
+}
+
+.intro-overlay--escondida {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vscode-janela {
+  width: min(560px, 90vw);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1e1e1e;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.vscode-janela--visivel {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.vscode-barra {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #323233;
+}
+
+.vscode-bolha {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.vscode-bolha--vermelha { background: #ff5f56; }
+.vscode-bolha--amarela { background: #ffbd2e; }
+.vscode-bolha--verde { background: #27c93f; }
+
+.vscode-aba {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #c9c9c9;
+}
+
+.vscode-corpo {
+  display: flex;
+}
+
+.vscode-linhas {
+  padding: 14px 10px;
+  text-align: right;
+  color: #5a5a5a;
+  font-size: 13px;
+  line-height: 1.6;
+  user-select: none;
+  white-space: pre;
+}
+
+.vscode-codigo {
+  flex: 1;
+  margin: 0;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d4d4d4;
+  white-space: pre-wrap;
+  min-height: 160px;
+}
+
+.vscode-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 15px;
+  margin-left: 1px;
+  background: #d4d4d4;
+  vertical-align: text-bottom;
+  animation: vscode-piscar 1s steps(1) infinite;
+}
+
+@keyframes vscode-piscar {
+  50% { opacity: 0; }
+}
+
+.vscode-terminal {
+  border-top: 1px solid #333;
+  background: #111214;
+  padding: 12px 16px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #9fef8f;
+  white-space: pre-wrap;
+  min-height: 24px;
+}
+
+/* cores simples de sintaxe, aplicadas via spans no JS */
+.tok-chave { color: #569cd6; }
+.tok-string { color: #ce9178; }
+.tok-comentario { color: #6a9955; }
+.tok-funcao { color: #dcdcaa; }

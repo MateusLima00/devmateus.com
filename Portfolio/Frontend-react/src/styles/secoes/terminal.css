@@ -1,0 +1,231 @@
+/* =========================================================
+   SEÇÃO 2 — CONTAINER + TERMINAL INTERATIVO
+   O degradê preto → azul → branco todo começa aqui no topo
+   (a seção 1 é preto sólido, ver secoes/hero.css). Terminal
+   interativo (assets/js/terminal-experiencias.js) fica do lado
+   esquerdo; o aside de perfil fica em secoes/perfil-carrossel.css.
+   ========================================================= */
+
+.container__sessao_dois-devmateus {
+  min-height: 70vh;
+  padding: 80px clamp(24px, 6vw, 96px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(80px, 10vw, 160px);
+  background: linear-gradient(
+    to bottom,
+    #020201 0%,
+    #0b0518 8%,
+    #1f237d 16%,
+    #2443a5 26%,
+    #346dc6 42%,
+    #5598e1 58%,
+    #85c1f6 72%,
+    #dbf0ff 86%,
+    var(--paper) 96%
+  );
+}
+
+/* ── Terminal interativo (assets/js/terminal-experiencias.js) ──
+   Reaproveita as "bolhas" de janela e a fonte monoespaçada já
+   usadas na intro (.vscode-bolha etc, ver secoes/intro.css). */
+.menu_exp_carti {
+  flex: 0 1 auto;
+  min-width: 320px;
+  max-width: 760px;
+  background: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  outline: none; /* o foco já fica claro pelo cursor piscando na lacuna */
+}
+
+.terminal-exp__barra {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #323233;
+}
+
+/* Altura fixa de propósito: texto novo (experiências/certificados
+   maiores) rola por dentro do corpo, a página não cresce junto. */
+.terminal-exp__corpo {
+  height: 480px;
+  overflow-y: auto;
+  padding: 18px 20px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #d4d4d4;
+  cursor: text;
+  scrollbar-width: none; /* Firefox — continua rolando, só não mostra a barra */
+}
+
+.terminal-exp__corpo::-webkit-scrollbar {
+  display: none; /* Chrome/Edge/Safari */
+}
+
+/* ── 1. Menu clicável (escolher o script) ── */
+.terminal-exp__menu-scripts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.terminal-exp__script-btn {
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  background: #00000033;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #9fef8f;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.terminal-exp__script-btn:hover {
+  background: #ffffff0d;
+  border-color: #5a5a5a;
+}
+
+.terminal-exp__texto {
+  color: #d4d4d4;
+  margin-bottom: 10px;
+}
+
+.terminal-exp__texto--titulo {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ── 2. Lacuna do script escolhido — a digitação entra direto aqui,
+   sem prompt separado embaixo (era o que fazia parecer "distante"). ── */
+.terminal-exp__lacuna {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  background: #00000033;
+  border-radius: 6px;
+  color: #9a9a9a;
+  font-family: inherit;
+  font-size: 12.5px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.terminal-exp__lacuna-ativa {
+  color: #9fef8f;
+  font-weight: 700;
+  border-bottom: 1px solid #9fef8f;
+}
+
+.terminal-exp__linha-erro {
+  color: #f28b82;
+  margin-bottom: 4px;
+}
+
+.terminal-exp__prompt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #d4d4d4;
+}
+
+.terminal-exp__prompt-simbolo {
+  color: #9fef8f;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.terminal-exp__prompt-texto {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ── 3. Lista digitada (resultado do script) ── */
+.terminal-exp__lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.terminal-exp__item {
+  padding-left: 12px;
+  border-left: 2px solid #9fef8f52;
+}
+
+.terminal-exp__item-titulo {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.terminal-exp__item-periodo {
+  color: #9fef8f;
+  font-size: 12px;
+  margin: 2px 0 6px;
+}
+
+.terminal-exp__item-descricao {
+  color: #9a9a9a;
+  font-size: 12.5px;
+  line-height: 1.6;
+  white-space: pre-line; /* preserva as quebras de linha (\n) dos bullets em descricao */
+}
+
+/* Cabeçalho da lista: título da categoria + dica do Ctrl+C lado a lado
+   (antes ficava fixo no rodapé — agora fica junto do título, no topo). */
+.terminal-exp__cabecalho-lista {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.terminal-exp__dica {
+  flex-shrink: 0;
+  color: #5a5a5a;
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+.terminal-exp__dica-enter {
+  color: #5a5a5a;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+/* Dica pro usuário que não manja de código: explica em linguagem simples
+   que dá pra clicar, digitar ou apertar Enter — some sozinha ao clicar
+   no menu, já que a partir daí a interação já ficou clara. */
+.terminal-exp__dica-leigo {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: #ffffff08;
+  border: 1px dashed #3a3a3a;
+  border-radius: 6px;
+  color: #8a8a8a;
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+.terminal-exp__dica-leigo__icone {
+  flex-shrink: 0;
+}

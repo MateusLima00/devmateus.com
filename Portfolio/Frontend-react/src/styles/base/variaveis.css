@@ -1,0 +1,9 @@
+/* =========================================================
+   VARIÁVEIS GLOBAIS
+   Cores e tokens reaproveitados em mais de uma seção do site.
+   ========================================================= */
+
+:root {
+  --paper: #ffffff; /* fundo das seções claras */
+  --ink: #101010; /* cor de texto padrão sobre fundo claro */
+}
