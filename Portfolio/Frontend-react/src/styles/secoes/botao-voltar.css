@@ -1,0 +1,65 @@
+/* =========================================================
+   BOTÃO "VOLTAR" — compartilhado entre /projetos e /sobre (qualquer
+   página que não seja a home). CSS puro (sem Tailwind), pra funcionar
+   igual em todo canto do site.
+   ========================================================= */
+
+.botao-voltar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 18px;
+  border-radius: 100px;
+  background: #1c2330;
+  border: 1.5px solid #3d4552;
+  color: #e6edf3;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.botao-voltar:hover {
+  background: #2f5fd1;
+  border-color: #2f5fd1;
+  color: #ffffff;
+  transform: translateX(-3px);
+}
+
+@media (max-width: 760px) {
+  .botao-voltar {
+    top: 14px;
+    left: 14px;
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+}
+
+
+/* ── Página /sobre (ainda um stub) ── */
+.pagina-sobre-body {
+  min-height: 100vh;
+  background: #05070c;
+  display: flex;
+  flex-direction: column;
+}
+
+.pagina-sobre {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 96px 24px 48px;
+}
+
+.pagina-sobre__titulo {
+  color: #e6edf3;
+  font-size: clamp(28px, 6vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}

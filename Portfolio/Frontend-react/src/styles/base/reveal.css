@@ -1,0 +1,24 @@
+/* =========================================================
+   SCROLL REVEAL (assets/js/reveal.js)
+   Estado inicial ".reveal" (invisível, deslocado) → estado
+   final ".reveal-visivel" (aplicado via JS quando o elemento
+   entra na viewport). O atraso escalonado (nth-child) dá o
+   efeito de itens surgindo em sequência, não todos de uma vez.
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  transition-delay: var(--atraso-reveal, 0ms);
+}
+
+.reveal-visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-texto > *:nth-child(1) { --atraso-reveal: 0ms; }
+.hero-texto > *:nth-child(2) { --atraso-reveal: 120ms; }
+.hero-texto > *:nth-child(3) { --atraso-reveal: 240ms; }
+.hero-texto > *:nth-child(4) { --atraso-reveal: 360ms; }

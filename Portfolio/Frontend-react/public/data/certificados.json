@@ -1,0 +1,96 @@
+[
+  {
+    "titulo": "HTML E CSS: Amabientes Desenvolvimento, Estrutura de Arquivos e Tgas",
+    "instituicao": "alura",
+    "ano": "2025"
+  },
+  {
+    "titulo": "HTML E CSS: Cabeçalho, Footer e Variáveis CSS",
+    "instituicao": "alura",
+    "ano": "2025"
+  }, 
+    {
+    "titulo": "HTML E CSS: Classes, Posicionamento e Flexbox",
+    "instituicao": "alura",
+    "ano": "2025"
+  }, 
+    {
+    "titulo": "HTML E CSS: PRATICANDO HTML/CSS",
+    "instituicao": "alura",
+    "ano": "2025"
+  }, 
+    {
+    "titulo": "HTML E CSS: Ambiente, estrutura e estilo",
+    "instituicao": "alura",
+    "ano": "2025"
+  },
+    {
+    "titulo": "HTML E CSS: Trabalhando com Responsividade e Publicação de projetos",
+    "instituicao": "alura",
+    "ano": "2025"
+  }, 
+    {
+    "titulo": "Technical Support Fundamentals",
+    "instituicao": "Course",
+    "ano": "2025"
+  }, 
+    {
+    "titulo": "LÓGICA DE PROGRAMAÇÃO: Mergulhando em programação com JavaScript",
+    "instituicao": "alura",
+    "ano": "2025"
+  }, 
+    {
+    "titulo": "PENSAMENTO COMPUTACIONAL: Fundamentos da computação e lógica de programação",
+    "instituicao": "alura",
+    "ano": "2025"
+  }, 
+    {
+    "titulo": "Carreiras Desenvolvedor Front-end React: Boas-vindos e primeiros passos",
+    "instituicao": "alura",
+    "ano": "2025"
+  }, 
+    {
+    "titulo": "Carreiras Desenvolvimento Back-End Python: Boas-vindas e primeiros passos",
+    "instituicao": "alura",
+    "ano": "2025"
+  }, 
+     {
+    "titulo": "Internet: Entendendo os Fundamentos da Web",
+    "instituicao": "alura",
+    "ano": "2025"
+  }, 
+    {
+    "titulo": "Certificação Linux LPI Essentials: Evolution and Distributions",
+    "instituicao": "alura",
+    "ano": "2026"
+  }, 
+    {
+    "titulo": "Linux: Criando script para processamentos de arquivos de logs",
+    "instituicao": "alura",
+    "ano": "2026"
+  }, 
+      {
+    "titulo": "Linux: Gerenciando diretórios, arquivos, permissões e processos",
+    "instituicao": "alura",
+    "ano": "2026"
+  }, 
+      {
+    "titulo": "Linux para Cibersegurança: Administração, Shell scripting e Kali Linus",
+    "instituicao": "alura",
+    "ano": "2026"
+  }, 
+      {
+    "titulo": "Claude 101",
+    "instituicao": "Anthropic",
+    "ano": "2026"
+  },     {
+    "titulo": "Claude Code 101",
+    "instituicao": "Anthropic",
+    "ano": "2025"
+  }, 
+      {
+    "titulo": "Claude Code in Action",
+    "instituicao": "Anthropic",
+    "ano": "2025"
+  }
+]

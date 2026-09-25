@@ -1,0 +1,22 @@
+[
+  {
+    "titulo": "Assistente de TI — Unilink Transportes Integrados Ltda",
+    "periodo": "2023 — atual",
+    "descricao": "• Administração de firewall (Fortinet) e infraestrutura de rede em ambiente multiunidades\n• Administração de contas de usuários e permissões (gestão de identidades) via Google Workspace, com uso esporádico de Entra ID\n• Responsável único pela gestão de usuários e permissões de pastas no servidor via Active Directory (AD)\n• Suporte técnico de primeiro e segundo nível, presencial e remoto, com triagem e acompanhamento de chamados\n• Gestão e controle de ativos de TI, com documentação técnica de processos e configurações\n• Acompanhamento de fornecedores de tecnologia e serviços contratados (telemetria de frota via API Autotrac)\n• Administração de servidores Linux, Windows e banco de dados PostgreSQL\n• Desenvolvimento de automações em Python para melhoria de processos operacionais"
+  },
+  {
+    "titulo": "Desenvolvedor Freelancer — Sistema de Gestão de Guias Médicas (TCK)",
+    "periodo": "05/2026",
+    "descricao": "• Identificação e correção de 19 vulnerabilidades críticas (SQL Injection, credenciais hardcoded, upload sem validação MIME) em sistema de produção com dados de saúde sensíveis\n• Elaboração de documentação técnica de diagnóstico e conformidade com a LGPD\n• Testes e validação de funcionalidades em ambiente de produção real"
+  },
+  {
+    "titulo": "Desenvolvedor Freelancer — JD Bebidas: Sistema de Gestão para Distribuidora",
+    "periodo": "05/2026",
+    "descricao": "• Desenvolvimento de painel web de gestão (PDV): vendas, estoque, relatórios financeiros e auditoria\n• Arquitetura em Next.js, PostgreSQL e autenticação JWT com API REST"
+  },
+  {
+    "titulo": "Estagiário de TI — Atacadão Led",
+    "periodo": "período anterior",
+    "descricao": "• Suporte técnico a colaboradores em hardware, software e ferramentas de TI\n• Manutenção, formatação, instalação e configuração de sistemas operacionais e pacote Office"
+  }
+]

@@ -31,3 +31,8 @@ pnpm-debug.log*
 # ── Sistema operacional ───────────────────────
 .DS_Store
 Thumbs.db
+
+# ── Fora do escopo deste repo (não sobem) ─────
+Portfolio/Frontend/
+prototype-hero/
+*.local

@@ -1,0 +1,30 @@
+/* =========================================================
+   RODAPÉ (assets/js/rodape.js — só preenche o ano atual)
+   ========================================================= */
+
+.rodape-devmateus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px clamp(24px, 6vw, 96px);
+  border-top: 1px solid #e5e5e5;
+  background: var(--paper);
+}
+
+.rodape-devmateus__texto {
+  font-size: 13px;
+  color: #8a8a8a;
+}
+
+/* Mesma lista de redes da seção 2/3, só que menor e mais discreta aqui. */
+.lista_redes--rodape a {
+  width: 40px;
+  height: 40px;
+}
+
+.lista_redes--rodape img {
+  width: 26px;
+  height: 26px;
+}
