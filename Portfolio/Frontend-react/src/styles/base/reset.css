@@ -14,8 +14,20 @@
    body virar uma caixa de rolagem própria em alguns navegadores (ele para
    de "propagar" o scroll pro viewport), criando uma segunda barra vertical
    por dentro da barra normal da página — um bug clássico de CSS. */
-html {
+html,
+body {
   overflow-x: hidden; /* evita scroll lateral causado pelos elementos decorativos do hero */
+  max-width: 100vw;
+}
+
+/* Qualquer imagem/svg/vídeo que exceda o container da seção encolhe em vez
+   de estourar a largura da página — rede de segurança contra scroll lateral
+   em telas estreitas. */
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
 }
 
 /* Enquanto a intro (assets/js/intro.js) está tocando: trava o scroll

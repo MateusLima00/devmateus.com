@@ -1,14 +1,53 @@
-# Portfolio — versão React
+# devmateus.com
 
-Migração da versão vanilla (`../Frontend`) pra React + Vite + React Router,
-mantendo o mesmo visual, comportamento e dados — sem reescrever do zero.
-A versão vanilla continua no ar em `../Frontend` até essa aqui ser validada.
+Portfólio pessoal de **Mateus Lima** — React + Vite, feito do zero (migrado
+de uma versão vanilla HTML/CSS/JS), com uma seção de projetos que traz
+**prévias interativas reais** dos sistemas que desenvolvi, não só prints:
+dashboards navegáveis, réplicas fiéis do layout original (dados e nomes de
+empresa anonimizados quando necessário).
 
-## Rodando
+## Destaques
+
+- **Hero em 3D**: globo interativo (biblioteca `cobe`, WebGL) com "chuva de
+  código" animada atrás, e uma intro que digita um script Python de verdade
+  antes de revelar o site.
+- **Terminal interativo**: experiência profissional navegável como se fosse
+  um terminal de verdade, completando comandos.
+- **Página de projetos estilo GitHub**: perfil + README renderizado (mini
+  parser de markdown próprio) + grade de "pastas" que abrem uma prévia em
+  modal.
+- **Prévias interativas dos projetos**: em vez de só uma imagem estática,
+  alguns projetos abrem uma réplica funcional do sistema real (sidebar,
+  dashboard, tabelas, gráficos) — dá pra navegar entre as telas de verdade.
+- **Formulário de contato funcional**: envia e-mail direto via Web3Forms,
+  com proteção anti-spam client-side (honeypot, limite de envios por
+  minuto/dia, bloqueio de conteúdo tipo script/HTML).
+- **Responsivo**: layout pensado pra celular em todas as páginas, incluindo
+  as prévias de dashboard (que viram uma caixa com scroll horizontal
+  próprio em telas pequenas, sem afetar o resto da página).
+
+## Stack
+
+- **React 19** + **Vite 8** + **React Router v7**
+- CSS puro (sem framework de UI) — cada seção tem seu próprio arquivo,
+  importado em `styles/global.css`
+- `cobe` para o globo 3D do hero
+- `lucide-react` para os ícones das prévias de projeto
+- Web3Forms para o envio do formulário de contato (sem backend próprio)
+
+## Rodando localmente
 
 ```bash
 npm install
+cp .env.example .env   # e preenche a chave do Web3Forms (opcional — sem ela o formulário fica desabilitado)
 npm run dev
+```
+
+Build de produção:
+
+```bash
+npm run build
+npm run preview
 ```
 
 ## Estrutura
@@ -30,8 +69,9 @@ src/
     Hero/                     seção 1: título, globo 3D (cobe) e chuva de código
     Terminal/                 terminal interativo (menu → completar comando → lista)
     PerfilCarrossel/          foto + redes + carrossel de tecnologias
-    Contato/                  formulário + lista de contatos diretos
-    Projetos/                 sidebar de perfil, README.md, grade de pastas, modal
+    Contato/                  formulário (Web3Forms + anti-spam) + lista de contatos diretos
+    Projetos/                 sidebar de perfil, README, grade de pastas, modal
+      demos/                   prévias interativas de projetos reais (anonimizados)
 
   context/                  estado compartilhado entre componentes que não têm
                              relação direta de pai/filho
@@ -44,34 +84,33 @@ src/
     useGithub                     dados reais da API do GitHub (perfil/linguagens/atividade)
     useProjetos                   projetos.json, stats do portfolio, skills
 
-  styles/                   CSS puro, portado quase 1:1 da versão vanilla
+  styles/                   CSS puro, organizado por seção
     global.css                 só @import, importado uma vez em App.jsx
-    base/                      variáveis, reset, animação de reveal
-    secoes/                    um arquivo por seção da home
-    pagina-projetos.css        só usado nas páginas /projetos e /sobre
-    responsivo.css             todos os breakpoints, importado por último
+    base/                       variáveis, reset, animação de reveal
+    secoes/                     um arquivo por seção da home + botão voltar
+    pagina-projetos.css         só usado em /projetos
+    responsivo.css              breakpoints, importado por último
 
 public/
-  data/                    os mesmos JSONs da versão vanilla (experiencias,
-                           certificados, tecnologias, projetos) — editar aqui
-                           não exige tocar em nenhum componente
-  img/                     as mesmas imagens
+  data/                    JSONs de conteúdo (experiências, certificados,
+                           tecnologias, projetos) — editar aqui não exige
+                           tocar em nenhum componente
+  img/                     imagens do site e das prévias de projeto
 ```
 
 ## Decisões da migração
 
-- **Rotas em vez de páginas separadas**: `/`, `/projetos` e `/sobre` substituem
-  `index.html`, `Project.html` e `Aboutme.html`. A navegação usa
+- **Rotas em vez de páginas separadas**: `/`, `/projetos` e `/sobre`
+  substituem `index.html`, `Project.html` e `Aboutme.html`. A navegação usa
   `<LinkComTransicao>` (não `<a>`/`<Link>` puro) pra manter a transição
   circular entre páginas.
-- **A intro só toca na home**: igual à versão vanilla, onde só `index.html`
-  carregava `intro.js`. Entrar direto em `/projetos` ou `/sobre` não mostra a
-  intro (ver comentário em `IntroOverlay.jsx`).
-- **O bug do globo sumindo ao voltar** (bfcache perdendo o contexto WebGL,
-  corrigido na versão vanilla com um listener de `pageshow`) **não existe
-  mais aqui**: o React desmonta e remonta o componente `Globo` a cada troca
-  de rota, recriando o canvas do zero naturalmente.
-- **Responsividade**: além dos breakpoints que a versão vanilla já tinha
-  (seção 2 e a página de projetos), foram adicionados breakpoints pro hero
-  (empilha texto/globo em telas estreitas), pra barra de navegação flutuante
-  e pro formulário de contato — ver `styles/responsivo.css`.
+- **A intro só toca na home**: entrar direto em `/projetos` ou `/sobre` não
+  mostra a intro (ver comentário em `IntroOverlay.jsx`).
+- **Prévias fiéis, não reinterpretadas**: as prévias interativas em
+  `Projetos/demos/` usam as mesmas classes CSS e a mesma estrutura HTML dos
+  projetos reais (não um redesign) — só nomes/dados sensíveis são trocados
+  por versões fictícias.
+- **Responsividade**: além dos breakpoints de cada seção, dashboards
+  desktop replicados nas prévias (que não fazem sentido espremidos até
+  ficar ilegíveis) viram uma caixa com scroll horizontal próprio em telas
+  pequenas — o site em volta nunca rola pro lado.

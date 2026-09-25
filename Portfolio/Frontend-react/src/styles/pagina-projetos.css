@@ -10,32 +10,6 @@
   min-height: 100vh;
 }
 
-.pagina-projetos__voltar {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
-  display: inline-flex;
-  align-items: center;
-  padding: 9px 18px;
-  border-radius: 100px;
-  background: #1c2330;
-  border: 1.5px solid #3d4552;
-  color: #e6edf3;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
-}
-
-.pagina-projetos__voltar:hover {
-  background: #2f5fd1;
-  border-color: #2f5fd1;
-  color: #ffffff;
-  transform: translateX(-3px);
-}
-
 .pagina-projetos {
   max-width: 1160px;
   margin: 0 auto;
@@ -952,10 +926,22 @@
 }
 
 
-/* ── Responsivo ── */
+/* ── Responsivo ──
+   A página inteira praticamente não tinha regras de mobile (só o grid do
+   perfil). Prévias interativas (DemoControleTi/DemoBolsoLeve) são réplicas
+   de dashboards desktop de verdade — não cabe "encolher" tudo pra 360px
+   sem virar ilegível, então em telas pequenas elas ficam dentro de uma
+   caixa com scroll HORIZONTAL PRÓPRIO (contido ali, não vaza pra página) —
+   o usuário arrasta só a prévia, o site em volta continua fixo. */
 @media (max-width: 760px) {
+  .pagina-projetos {
+    padding: 80px 16px 72px;
+    gap: 40px;
+  }
+
   .perfil-readme {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .perfil-readme__lateral {
@@ -963,7 +949,45 @@
     text-align: center;
   }
 
+  .perfil-readme__foto {
+    width: 140px;
+    height: 140px;
+  }
+
   .readme-card__stats {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .projetos-pastas__grade {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 24px 12px;
+  }
+
+  .projeto-modal {
+    padding: 0;
+  }
+
+  .projeto-modal__janela,
+  .projeto-modal__janela--larga {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+    padding: 20px 16px 28px;
+  }
+
+  .projeto-modal__titulo {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .projetos-pastas__grade {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .pasta-projeto__forma {
+    width: 104px;
+    height: 78px;
   }
 }
