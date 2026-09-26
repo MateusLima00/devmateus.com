@@ -2,13 +2,13 @@ import { useLocation } from "react-router-dom";
 import { LinkComTransicao } from "./LinkComTransicao.jsx";
 
 /**
- * Barra flutuante de navegação: aparece apenas nas páginas internas.
- * Na página principal, fica oculta.
+ * Barra flutuante de navegação: aparece apenas na página principal.
+ * Nas páginas internas, fica oculta.
  */
 export function BarraNavegacao() {
   const location = useLocation();
 
-  const mostrar = location.pathname !== "/";
+  const mostrar = location.pathname === "/";
 
   return (
     <nav className={`barra-nav${mostrar ? " barra-nav--visivel" : ""}`} aria-label="Navegação principal">
