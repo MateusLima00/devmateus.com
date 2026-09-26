@@ -9,6 +9,7 @@
 .container__sessao_um-devmateus {
   position: relative;
   min-height: 100vh;
+  isolation: isolate;
   overflow: hidden; /* contém a curva do horizonte (::before) e o globo, que sangram pras bordas */
   background: #020201; /* preto sólido — a transição pro azul/branco começa no topo da seção 2 */
   /* Grid em vez de position:absolute + top:50vh: texto e globo centralizam
@@ -27,6 +28,7 @@
 .container__sessao_um-devmateus::before {
   content: "";
   position: absolute;
+  z-index: 0;
   top: 8%;
   left: 50%;
   width: 160%;
@@ -130,12 +132,12 @@
    centralizado na mesma altura vertical do bloco de texto. */
 .globo-devmateus {
   position: relative; /* era absolute; top: 50vh; right: 0; transform: translate(28%, -50%) */
+  z-index: 2;
   justify-self: end;
   width: min(900px, 85vw);
   height: min(900px, 85vw);
   max-width: 100%;
   aspect-ratio: 1 / 1;
-  z-index: 1;
   cursor: grab;
   touch-action: none; /* evita scroll/zoom do navegador ao arrastar em telas touch */
   margin-right: -32%;
