@@ -235,6 +235,8 @@
   background: #0d1117;
   color: #d4d4d4;
   font: inherit;
+  font-size: 16px;
+  touch-action: manipulation;
 }
 
 .terminal-exp__input:focus {

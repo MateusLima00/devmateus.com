@@ -133,6 +133,7 @@
   justify-self: end;
   width: min(900px, 85vw);
   height: min(900px, 85vw);
+  max-width: 100%;
   aspect-ratio: 1 / 1;
   z-index: 1;
   cursor: grab;
