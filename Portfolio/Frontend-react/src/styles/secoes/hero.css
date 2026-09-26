@@ -11,9 +11,7 @@
   min-height: 100vh;
   isolation: isolate;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at 50% 12%, rgba(255, 255, 255, 0.08), transparent 28%),
-    #020201;
+  background: #020201;
   /* Grid em vez de position:absolute + top:50vh: texto e globo centralizam
      em relação à própria seção, não ao viewport bruto — evita que fiquem
      "presos" num canto quando o zoom do navegador muda o viewport em px. */
@@ -105,28 +103,33 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: min(1000px, 90vw); /* só a região do globo, não a tela toda — não briga com a leitura do texto à esquerda */
-  height: 100vh; /* só a primeira tela — o resto da seção é só o degradê do scroll, não precisa da chuva desenhando lá */
+  width: min(820px, 58vw);
+  height: 100%;
   z-index: 1;
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
-          mask-image: linear-gradient(to left, black 60%, transparent 100%);
+  opacity: 0.8;
+  background: transparent;
+  -webkit-mask-image: none;
+          mask-image: none;
 }
 
 /* ── Globo 3D (canvas renderizado por assets/js/globo.js) ──
    Fica no lado direito, sangrando pra fora da borda, e
    centralizado na mesma altura vertical do bloco de texto. */
 .globo-devmateus {
-  position: relative; /* era absolute; top: 50vh; right: 0; transform: translate(28%, -50%) */
+  position: relative;
+  display: block;
   z-index: 4;
-  justify-self: center;
-  width: min(560px, 42vw);
-  height: min(560px, 42vw);
+  grid-column: 2;
+  justify-self: end;
+  width: clamp(340px, 42vw, 760px);
+  height: clamp(340px, 42vw, 760px);
   max-width: 100%;
   aspect-ratio: 1 / 1;
+  margin-left: auto;
+  margin-right: clamp(-10px, -0.5vw, 0px);
   cursor: grab;
-  touch-action: none; /* evita scroll/zoom do navegador ao arrastar em telas touch */
-  margin-right: 0;
+  touch-action: none;
 }
 
 .globo-devmateus:active {

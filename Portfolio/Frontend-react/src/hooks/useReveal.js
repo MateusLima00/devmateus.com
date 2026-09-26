@@ -18,12 +18,9 @@ export function useReveal(atrasoMs = 0) {
 
     const observador = new IntersectionObserver(
       ([entrada]) => {
-        if (entrada.isIntersecting) {
-          setVisivel(true);
-          observador.unobserve(elemento);
-        }
+        setVisivel(entrada.isIntersecting);
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     observador.observe(elemento);

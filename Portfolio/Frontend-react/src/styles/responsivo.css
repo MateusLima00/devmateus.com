@@ -29,10 +29,7 @@
   }
 
   .globo-devmateus {
-    justify-self: center;
-    width: min(420px, 78vw);
-    height: min(420px, 78vw);
-    margin-right: 0;
+    display: none;
   }
 
   .chuva-codigo {
@@ -53,12 +50,7 @@
   }
 
   .globo-devmateus {
-    width: min(270px, 52vw);
-    height: min(270px, 52vw);
-    margin-right: 0;
-    justify-self: center;
-    align-self: center;
-    transform: translateY(0);
+    display: none;
   }
 }
 
