@@ -44,8 +44,8 @@
   .container__sessao_um-devmateus {
     min-height: auto;
     overflow: hidden;
-    padding-block: 72px 20px;
-    gap: 12px;
+    padding-block: 56px 20px;
+    gap: 8px;
   }
 
   .hero-texto {
@@ -53,8 +53,8 @@
   }
 
   .globo-devmateus {
-    width: min(300px, 58vw);
-    height: min(300px, 58vw);
+    width: min(270px, 52vw);
+    height: min(270px, 52vw);
     margin-right: 0;
     justify-self: center;
     align-self: center;
