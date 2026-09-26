@@ -168,3 +168,41 @@
 .carrossel-tech__ponto--ativo {
   background: #5598e1;
 }
+
+@media (max-width: 480px) {
+  .carrossel-tech__linha {
+    gap: 8px;
+  }
+
+  .carrossel-tech {
+    padding: 1em 0.9em;
+  }
+
+  .carrossel-tech__card {
+    height: auto;
+    min-height: 168px;
+  }
+
+  .carrossel-tech__grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .carrossel-tech__pill {
+    justify-content: center;
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+
+  .carrossel-tech__seta {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .carrossel-tech__grade {
+    grid-template-columns: 1fr;
+  }
+}
