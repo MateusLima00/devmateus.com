@@ -10,8 +10,10 @@
   position: relative;
   min-height: 100vh;
   isolation: isolate;
-  overflow: hidden; /* contém a curva do horizonte (::before) e o globo, que sangram pras bordas */
-  background: #020201; /* preto sólido — a transição pro azul/branco começa no topo da seção 2 */
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 12%, rgba(255, 255, 255, 0.08), transparent 28%),
+    #020201;
   /* Grid em vez de position:absolute + top:50vh: texto e globo centralizam
      em relação à própria seção, não ao viewport bruto — evita que fiquem
      "presos" num canto quando o zoom do navegador muda o viewport em px. */
@@ -21,22 +23,6 @@
   align-items: center;
   gap: clamp(24px, 6vw, 120px); /* era: 24px fixo */
   padding-inline: clamp(40px, 8vw, 140px);
-}
-
-/* Curva do "horizonte" do globo: arco sutil perto do topo, dando o
-   arredondado que aparece na borda quando o site rola por dentro da esfera. */
-.container__sessao_um-devmateus::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 8%;
-  left: 50%;
-  width: 160%;
-  height: 40vh;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center, transparent 60%, #ffffff14 100%);
-  pointer-events: none;
 }
 
 /* ── Bloco de texto (título / subtítulo / descrição) ──
@@ -121,7 +107,7 @@
   right: 0;
   width: min(1000px, 90vw); /* só a região do globo, não a tela toda — não briga com a leitura do texto à esquerda */
   height: 100vh; /* só a primeira tela — o resto da seção é só o degradê do scroll, não precisa da chuva desenhando lá */
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
           mask-image: linear-gradient(to left, black 60%, transparent 100%);
@@ -132,15 +118,15 @@
    centralizado na mesma altura vertical do bloco de texto. */
 .globo-devmateus {
   position: relative; /* era absolute; top: 50vh; right: 0; transform: translate(28%, -50%) */
-  z-index: 3;
-  justify-self: end;
-  width: min(900px, 85vw);
-  height: min(900px, 85vw);
+  z-index: 4;
+  justify-self: center;
+  width: min(560px, 42vw);
+  height: min(560px, 42vw);
   max-width: 100%;
   aspect-ratio: 1 / 1;
   cursor: grab;
   touch-action: none; /* evita scroll/zoom do navegador ao arrastar em telas touch */
-  margin-right: -32%;
+  margin-right: 0;
 }
 
 .globo-devmateus:active {
