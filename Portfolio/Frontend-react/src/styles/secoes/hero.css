@@ -28,7 +28,7 @@
 .container__sessao_um-devmateus::before {
   content: "";
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   top: 8%;
   left: 50%;
   width: 160%;
@@ -132,7 +132,7 @@
    centralizado na mesma altura vertical do bloco de texto. */
 .globo-devmateus {
   position: relative; /* era absolute; top: 50vh; right: 0; transform: translate(28%, -50%) */
-  z-index: 2;
+  z-index: 3;
   justify-self: end;
   width: min(900px, 85vw);
   height: min(900px, 85vw);
