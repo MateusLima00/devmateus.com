@@ -40,6 +40,19 @@
   }
 }
 
+@media (orientation: portrait) and (max-width: 980px) {
+  .container__sessao_um-devmateus {
+    padding-block: 100px 32px;
+    gap: 24px;
+  }
+
+  .globo-devmateus {
+    width: min(380px, 72vw);
+    height: min(380px, 72vw);
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 480px) {
   .container__sessao_um-devmateus {
     padding-block: 96px 40px;
@@ -112,17 +125,47 @@
   }
 
   .menu_exp_carti {
+    width: 100%;
     min-width: 0; /* sem isso o flex item não encolhe abaixo de 320px e estoura a tela */
   }
 
   .terminal-exp__corpo {
-    height: 380px;
+    height: auto;
+    max-height: none;
+    overflow: visible;
     padding: 16px;
     font-size: 12.5px;
   }
 
   .terminal-exp__lacuna {
     font-size: 11.5px;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .terminal-exp__campo-digitacao {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .terminal-exp__input {
+    min-width: 0;
+    width: 100%;
+    order: 2;
+  }
+
+  .terminal-exp__botao-executar,
+  .terminal-exp__botao-voltar {
+    width: 100%;
+  }
+
+  .terminal-exp__acoes-auxiliares {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .terminal-exp__dica-leigo {
+    font-size: 12px;
   }
 }
 

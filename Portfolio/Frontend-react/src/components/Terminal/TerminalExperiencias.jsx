@@ -198,11 +198,19 @@ export function TerminalExperiencias() {
             scriptEscolhido={scriptEscolhido}
             bufferDigitado={bufferDigitado}
             historicoErros={historicoErros}
+            onDigitar={setBufferDigitado}
+            onExecutar={conferirResposta}
+            onVoltar={voltarParaMenu}
           />
         )}
 
         {estado === "lista" && (
-          <Lista script={SCRIPTS[scriptEscolhido]} scriptEscolhido={scriptEscolhido} itens={itensLista} />
+          <Lista
+            script={SCRIPTS[scriptEscolhido]}
+            scriptEscolhido={scriptEscolhido}
+            itens={itensLista}
+            onVoltar={voltarParaMenu}
+          />
         )}
       </div>
     </article>
@@ -231,7 +239,7 @@ function MenuScripts({ onEscolher }) {
   );
 }
 
-function Completando({ script, scriptEscolhido, bufferDigitado, historicoErros }) {
+function Completando({ script, scriptEscolhido, bufferDigitado, historicoErros, onDigitar, onExecutar, onVoltar }) {
   return (
     <>
       <p className="terminal-exp__texto">Complete a lacuna e aperte Enter — escreva certinho, sem espaço e sem acento:</p>
@@ -243,10 +251,37 @@ function Completando({ script, scriptEscolhido, bufferDigitado, historicoErros }
         {`");\n}`}
       </pre>
 
+      <div className="terminal-exp__campo-digitacao">
+        <span className="terminal-exp__campo-prefix">./</span>
+        <input
+          type="text"
+          value={bufferDigitado}
+          onChange={(evento) => onDigitar(evento.target.value)}
+          onKeyDown={(evento) => {
+            if (evento.key === "Enter") {
+              evento.preventDefault();
+              onExecutar();
+            }
+          }}
+          aria-label={`Digite o comando ${scriptEscolhido}`}
+          className="terminal-exp__input"
+          autoFocus
+          placeholder={scriptEscolhido}
+        />
+        <button type="button" className="terminal-exp__botao-executar" onClick={onExecutar}>
+          Executar
+        </button>
+      </div>
+
       {historicoErros.map((linha, indice) => (
         <p className="terminal-exp__linha-erro" key={indice}>{linha}</p>
       ))}
-      <p className="terminal-exp__dica-enter">Enter para rodar · Ctrl+C ↩ voltar ao menu</p>
+      <div className="terminal-exp__acoes-auxiliares">
+        <p className="terminal-exp__dica-enter">Enter para rodar · Ctrl+C ↩ voltar ao menu</p>
+        <button type="button" className="terminal-exp__botao-voltar" onClick={onVoltar}>
+          Voltar ao menu
+        </button>
+      </div>
 
       <p className="terminal-exp__dica-leigo">
         <span className="terminal-exp__dica-leigo__icone" aria-hidden="true">💡</span>
@@ -259,7 +294,7 @@ function Completando({ script, scriptEscolhido, bufferDigitado, historicoErros }
   );
 }
 
-function Lista({ script, scriptEscolhido, itens }) {
+function Lista({ script, scriptEscolhido, itens, onVoltar }) {
   return (
     <>
       <p className="terminal-exp__prompt">
@@ -286,6 +321,12 @@ function Lista({ script, scriptEscolhido, itens }) {
               </li>
             ))}
           </ul>
+
+          <div className="terminal-exp__acoes-auxiliares terminal-exp__acoes-auxiliares--lista">
+            <button type="button" className="terminal-exp__botao-voltar" onClick={onVoltar}>
+              Voltar ao menu
+            </button>
+          </div>
         </>
       )}
     </>

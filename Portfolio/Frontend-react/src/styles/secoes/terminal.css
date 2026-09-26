@@ -209,6 +209,72 @@
   margin-top: 6px;
 }
 
+.terminal-exp__campo-digitacao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #00000033;
+  border: 1px solid #3a3a3a;
+}
+
+.terminal-exp__campo-prefix {
+  color: #9fef8f;
+  font-weight: 700;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+
+.terminal-exp__input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  background: #0d1117;
+  color: #d4d4d4;
+  font: inherit;
+}
+
+.terminal-exp__input:focus {
+  outline: 2px solid rgba(85, 152, 225, 0.7);
+  outline-offset: 1px;
+}
+
+.terminal-exp__botao-executar,
+.terminal-exp__botao-voltar {
+  border: 1px solid #4a5d8c;
+  border-radius: 6px;
+  background: #2443a5;
+  color: #ffffff;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.terminal-exp__botao-executar:hover,
+.terminal-exp__botao-voltar:hover {
+  background: #2f5fd1;
+  transform: translateY(-1px);
+}
+
+.terminal-exp__acoes-auxiliares {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.terminal-exp__acoes-auxiliares--lista {
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
 /* Dica pro usuário que não manja de código: explica em linguagem simples
    que dá pra clicar, digitar ou apertar Enter — some sozinha ao clicar
    no menu, já que a partir daí a interação já ficou clara. */
